@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>The Yard to Meter Converter </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/coming-soon.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://media.giphy.com/media/GbfDEIcgeZqYo/giphy.mp4" type="video/mp4">
+  </video>
+S
+  <div class="masthead">
+    <div class="masthead-bg"></div>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-12 my-auto">
+          <div class="masthead-content text-white py-5 py-md-0">
+            <h1 class="mb-3">Yard to Meter</h1>
+            <p class="mb-5">Welcome to the Length Converter. 
+             
+            <div class="input-group input-group-newsletter">
+    
+    
+      <div>
+         <?php
+
+if(isset($_POST['submit1'])){//if enter was clicked it'll check if its set
+    if(!empty($_POST['convert'])){//checks if they clicked a conversion button
+    $variable=$_POST['convert'];//var that will take whether the button has been clicked or not
+    $user_input=$_POST['user_input']; //var that is the users input
+    $yard = 1.09361;
+    $meter = .9144;
+   if($user_input >0 and $user_input!=""){ //if the input is less than zero or empty
+       if($variable=='YtoM'){
+           $result=$user_input*$meter;///conversion for yards to meters
+            echo "Yard: " . $user_input . " = " ." Meters: " . $result;//edho results
+       }if($variable=='MtoY'){
+           $result=$user_input*$yard; ///conversion for meters to yards
+            echo "Yard: " . $result . " = " . " Meters: " . $user_input;}
+    
+}else{
+       echo "ERROR: MEASUREMENT MAY NOT BE NEGATIVE";
+   }}else{
+       echo "PLEASE SELECT THE CONVERSTION YOU WOULD LIKE";
+   }}
+
+?>
+
+<form method= "post" action="index.php">
+    <input type="number" name="user_input" value="Measurement"><br ?><!--input-->
+    <input type= "radio" name="convert" value="YtoM">Yards to Meters<!--conversion button-->
+    <input type="radio" name = "convert" value="MtoY">Meters to Yards<!--conversion button-->
+    <input type ="submit" name="submit1" value="Enter"><!--button-->
+    
+</form>
+      </div>
+
+                
+  
+        
+        
+        
+  
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-icons">
+    <ul class="list-unstyled text-center mb-0">
+      <li class="list-unstyled-item">
+        <a href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      <li class="list-unstyled-item">
+        <a href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+      <li class="list-unstyled-item">
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  
+<script type = "text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
